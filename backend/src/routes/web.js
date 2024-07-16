@@ -1,11 +1,10 @@
 import express from 'express'
+import homeController from '../controller/homeController'
 
 const router = express.Router();
 
 const initWebBrowser = (app) => {
-    router.get('/', (req, res) => {
-        return res.send('Hello Worldss!')
-    })
+    router.get('/', homeController.handleHelloWord);
 
     return app.use('/', router)
 }
